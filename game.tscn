@@ -1,0 +1,170 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Movement.cs" type="Script" id=1]
+[ext_resource path="res://Coin.cs" type="Script" id=2]
+[ext_resource path="res://ScoreManager.cs" type="Script" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="SphereMesh" id=4]
+
+[sub_resource type="SphereShape" id=5]
+
+[sub_resource type="CubeMesh" id=6]
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 1, 0.772549, 0, 1 )
+
+[sub_resource type="BoxShape" id=7]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform( 30, 0, 0, 0, 1, 0, 0, 0, 30, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.776531, 0.63008, 0, -0.63008, 0.776531, 0, 49.4015, 46.1223 )
+
+[node name="RigidBody" type="RigidBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.2761, 0 )
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="RigidBody"]
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+shape = SubResource( 5 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.23, 2.41612, 0 )
+script = ExtResource( 2 )
+PlayerPath = NodePath("../RigidBody")
+ManagerPath = NodePath("../Control")
+
+[node name="MeshInstance" type="MeshInstance" parent="Area"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 7 )
+
+[node name="Area2" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.19263, 2.41612, 11.1407 )
+script = ExtResource( 2 )
+PlayerPath = NodePath("../RigidBody")
+ManagerPath = NodePath("../Control")
+
+[node name="MeshInstance" type="MeshInstance" parent="Area2"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area2"]
+shape = SubResource( 7 )
+
+[node name="Area3" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.19037, 2.41612, 17.8963 )
+script = ExtResource( 2 )
+PlayerPath = NodePath("../RigidBody")
+ManagerPath = NodePath("../Control")
+
+[node name="MeshInstance" type="MeshInstance" parent="Area3"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area3"]
+shape = SubResource( 7 )
+
+[node name="Area4" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0424, 2.41612, 14.7551 )
+script = ExtResource( 2 )
+PlayerPath = NodePath("../RigidBody")
+ManagerPath = NodePath("../Control")
+
+[node name="MeshInstance" type="MeshInstance" parent="Area4"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area4"]
+shape = SubResource( 7 )
+
+[node name="Area5" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5826, 2.41612, 3.34122 )
+script = ExtResource( 2 )
+PlayerPath = NodePath("../RigidBody")
+ManagerPath = NodePath("../Control")
+
+[node name="MeshInstance" type="MeshInstance" parent="Area5"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area5"]
+shape = SubResource( 7 )
+
+[node name="Area6" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.1771, 2.41612, -9.40113 )
+script = ExtResource( 2 )
+PlayerPath = NodePath("../RigidBody")
+ManagerPath = NodePath("../Control")
+
+[node name="MeshInstance" type="MeshInstance" parent="Area6"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area6"]
+shape = SubResource( 7 )
+
+[node name="Area7" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.40944, 1.85166, -14.6001 )
+script = ExtResource( 2 )
+PlayerPath = NodePath("../RigidBody")
+ManagerPath = NodePath("../Control")
+
+[node name="MeshInstance" type="MeshInstance" parent="Area7"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area7"]
+shape = SubResource( 7 )
+
+[node name="Area8" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.93899, 2.4429, -16.4314 )
+script = ExtResource( 2 )
+PlayerPath = NodePath("../RigidBody")
+ManagerPath = NodePath("../Control")
+
+[node name="MeshInstance" type="MeshInstance" parent="Area8"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area8"]
+shape = SubResource( 7 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.999961, 0.0039995, 0.00781383, -0.00791587, 0.026169, 0.999626, 0.00379353, -0.99965, 0.0261996, 0, 43.46, 0 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1027.0
+margin_bottom = 590.0
+script = ExtResource( 3 )
+LabelPath = NodePath("Label")
+CoinCount = 8
+
+[node name="Label" type="Label" parent="Control"]
+margin_left = 29.0
+margin_top = 23.0
+margin_right = 406.0
+margin_bottom = 223.0
+text = "Score: 10"
